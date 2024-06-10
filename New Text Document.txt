@@ -1,0 +1,36 @@
+we just install 
+php artisan jetstream:install livewire
+
+npm install
+npm run build
+
+php artisan migrate
+
+multi auth done admin
+
+airticketbanglad_ecommerce
+u6uv*8+3y{m6
+
+
+
+airticketbanglad_watch
+PC*BSgUNe8+9
+#OWwiiKUs_Wi
+
+airticketbanglad_watchghor
+tKFh#(G?0lyU
+
+watchgho_watchdb
+fKr33mp}4}(b
+
+
+apracloset_watch
+lh$a?,uPF[[c
+
+rifatmar_database
+rifatmar_username
+l7z;@FXtgx^O
+
+airticketbanglad_sfdenim
+airticketbanglad_sfdenim
+G3Dka0{B1;!2

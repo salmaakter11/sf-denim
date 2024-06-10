@@ -1,0 +1,13 @@
+jQuery(document).ready(function($){if($('#fullpage').length>0){const blockCircle=$('.block-circle');blockCircle.fadeOut();const circle=2*3.14*191;const section=$('.section');let hide=!0;let remove=1;let slideTo=0;new fullpage('#fullpage',{licenseKey:'',loopBottom:!0,loopTop:!0,css3:!1,normalScrollElements:'.excerpt-mobile',onLeave:function(origin,destination,direction){if(origin.index==10&&destination.index==0){fullpage_api.moveTo(2);return!1}
+if(origin.index==1&&destination.index==0){fullpage_api.moveTo(11);return!1}
+document.body.style.backgroundColor=destination.item.dataset.bg;if(destination.index==0){slideTo=0}
+if(destination.index==0&&hide){blockCircle.fadeIn();hide=!1}
+const circleValue=(destination.index-remove)*10;let successValue=(circleValue/100)*circle;let timeOut=700;setTimeout(()=>{for(let i=1;i<destination.index+1-remove;i++){$('.dot-'+i).css('fill','red');$('.dot-'+i).css('stroke','red')}
+for(let i=destination.index+1-remove;i<section.length;i++){$('.dot-'+i).css('fill','transparent');$('.dot-'+i).css('stroke','white')}},timeOut)
+document.getElementById('success-value').setAttribute('stroke-dasharray',`${successValue}, ${circle}`);if(destination.index!=0||!hide){blockCircle.fadeIn()}else{blockCircle.fadeOut()}},});$('.dot-box').on('click',function(){const key=parseInt($(this).data('key'));if(key==10){fullpage_api.moveTo('slide_'+0)}else{fullpage_api.moveTo('slide_'+key)}})}
+if($('#fullpage2').length>0){new fullpage('#fullpage2',{fadingEffect:!0,fadingEffectKey:'YWx2YXJvdHJpZ28uY29tXzAzN1ptRmthVzVuUldabVpXTjBiNXo=',loopBottom:!0,onLeave:function(origin,destination,direction){$('.scroll-navigation li').removeClass('active');$('.scroll-navigation li').eq(destination.index).addClass('active')},afterLoad:function(origin,destination,direction){const $videos=$('#fullpage2').find('video');for(let i=0;i<$videos.length;i++){$videos.get(i).play()}},});$('.scroll-navigation li').on('click',function(){const index=$(this).data('key');fullpage_api.moveTo(parseInt(index),0)})}
+const $bigBall=document.querySelector('.cursor__ball--big');const $smallBall=document.querySelector('.cursor__ball--small');const $hoverables=document.querySelectorAll('.hoverable');document.body.addEventListener('mousemove',onMouseMove);for(let i=0;i<$hoverables.length;i++){$hoverables[i].addEventListener('mouseenter',onMouseHover);$hoverables[i].addEventListener('mouseleave',onMouseHoverOut)}
+function onMouseMove(e){TweenMax.to($bigBall,.4,{x:e.pageX-15,y:e.pageY-15})}
+function onMouseHover(){$('.cursor__ball--big circle').css('stroke-width',0.4);TweenMax.to($bigBall,.3,{scale:3,})}
+function onMouseHoverOut(){$('.cursor__ball--big circle').css('stroke-width',1);TweenMax.to($bigBall,.3,{scale:1,})}})
+;
